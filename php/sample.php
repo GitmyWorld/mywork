@@ -1,6 +1,6 @@
 <?php
 require_once "jssdk.php";
-$jssdk = new JSSDK("wx112273be61615518", "d41ba3b7cf68a6a0e0e20e81d6eff2d1");
+$jssdk = new JSSDK("AppID(应用ID)", "AppSecret(应用密钥)");//微信公众平台-基本配置中查看
 $signPackage = $jssdk->GetSignPackage();
 ?>
 <!DOCTYPE html>
