@@ -47,13 +47,13 @@ class wechatCallbackapiTest
                 //$keyword = $postObj->MediaId; //获取midiaid步1
                 $time = time();
                 $textTpl = "<xml>
-							<ToUserName><![CDATA[%s]]></ToUserName>
-							<FromUserName><![CDATA[%s]]></FromUserName>
-							<CreateTime>%s</CreateTime>
-							<MsgType><![CDATA[%s]]></MsgType>
-							<Content><![CDATA[%s]]></Content>
-							<FuncFlag>0</FuncFlag>
-							</xml>";
+			    <ToUserName><![CDATA[%s]]></ToUserName>
+			    <FromUserName><![CDATA[%s]]></FromUserName>
+			    <CreateTime>%s</CreateTime>
+			    <MsgType><![CDATA[%s]]></MsgType>
+			    <Content><![CDATA[%s]]></Content>
+			    <FuncFlag>0</FuncFlag>
+			    </xml>";
             //图文回复模板 在素材管理区mediaID，但需要权限，需要发图片取id，
                 $imgTpl = "<xml>
                             <ToUserName><![CDATA[%s]]></ToUserName>
