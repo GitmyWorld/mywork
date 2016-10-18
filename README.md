@@ -73,7 +73,7 @@ $keyword = $postObj->MediaId; //获取midiaid步1
 //echo $resultStr;
 
 ```
-
+---
 ##### example3:微信网页开发
 
 参考微信JS-SDK文档说明
