@@ -1,0 +1,17 @@
+.padding1{
+	/*width:794px;打印不加宽度*/ 
+	height:1123px;
+	margin:5% auto;	
+	border:5px solid #C0C0C0
+}
+
+.style1{
+	height:100%;
+	background:#2A6496;
+	padding:5% 2%;
+	color:#FFFFFF;
+	
+}
+.style2{
+	padding:0 2%;
+}

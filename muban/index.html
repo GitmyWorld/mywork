@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+	<head id="head1">
+		<meta charset="utf-8" />
+		<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width" />
+		<title>Lodop一款优秀的Web打印控件应用，打印html页面</title>
+		<link rel="stylesheet" type="text/css" id="yangshi" href="css/bootstrap.css" />
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<script src="js/jquery-1.10.2.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/LodopFuncs.js"></script>
+		<!--1.使用<object>标签嵌入ActiveX控件：
+在表单源码中的<head></head>中嵌入lodop插件-->
+		<object id="LODOP_OB" classid="clsid:2105C259-1E0C-4534-8141-A753534CB4CA" width="0" height="0">
+
+       		 <embed id="LODOP_EM" type="application/x-print-lodop" width="0" height="0" pluginspage="install_lodop32.exe"></embed>
+
+   		 </object>
+	</head>
+
+	<body>
+		<a href="javascript:myPreview()"><b>打印预览</b></a>
+
+		<div class="container " id="divdiv1">
+			<div class="row clearfix padding1">
+				<div class="col-xs-4 style1">
+					<!--使用col-xs自适应响应式 图片使用png-->
+					<div id="img1"><img alt="140x140" src="img/share.png" class="img-circle" /></div>
+					<div class="page-header">
+						<h1>
+					Example page header <small>Subtext for header</small>
+				</h1>
+					</div> <address> <strong>Twitter, Inc.</strong><br /> 795 Folsom Ave, Suite 600<br /> San Francisco, CA 94107<br /> <abbr title="Phone">P:</abbr> (123) 456-7890</address>
+					<h3>
+				h3. 这是一套可视化布局系统.
+			</h3>
+					<span class="label label-default">标签</span> <span class="label label-default">标签</span> <span class="label label-default">标签</span> <span class="label label-default">标签</span>
+				</div>
+				<div class="col-xs-8   style2">
+					<h3>
+				h3. 这是一套可视化布局系统.
+			</h3>
+					<ol>
+						<li>
+							Lorem ipsum dolor sit amet
+						</li>
+						<li>
+							Consectetur adipiscing elit
+						</li>
+						<li>
+							Integer molestie lorem at massa
+						</li>
+						<li>
+							Facilisis in pretium nisl aliquet
+						</li>
+						<li>
+							Nulla volutpat aliquam velit
+						</li>
+						<li>
+							Faucibus porta lacus fringilla vel
+						</li>
+						<li>
+							Aenean sit amet erat nunc
+						</li>
+						<li>
+							Eget porttitor lorem
+						</li>
+					</ol>
+					<h3>
+				h3. 这是一套可视化布局系统.
+			</h3>
+					<blockquote>
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+						</p> <small>Someone famous <cite>Source Title</cite></small>
+					</blockquote>
+					<blockquote>
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+						</p> <small>Someone famous <cite>Source Title</cite></small>
+					</blockquote>
+					<blockquote>
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+						</p> <small>Someone famous <cite>Source Title</cite></small>
+					</blockquote>
+					<h3>
+				h3. 这是一套可视化布局系统.
+			</h3>
+					<p>
+						<em>Git</em> 是一个分布式的版本控制系统，最初由 <strong>Linus Torvalds</strong> 编写，用作Linux内核代码的管理。在推出后，Git在其它项目中也取得了很大成功，尤其是在 <small>Ruby</small> 社区中。
+					</p>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script language="javascript" type="text/javascript">
+		var LODOP; //声明为全局变量 
+
+		function myPreview() {
+
+			CreatePrintPage();
+
+			LODOP.PREVIEW(); //打印预览
+
+		};
+
+		function CreatePrintPage()
+
+		{
+
+			LODOP = getLodop(document.getElementById('LODOP_OB'), document.getElementById('LODOP_EM'));
+
+			var strBodyStyle = "<head>" + document.getElementById("head1").innerHTML + "</head>";
+
+			//这里的“yangshi"是样式表的ID，如  <style type="text/css" id="yangshi"></style> 样式表加载在头部head，
+
+			var strFormHtml = strBodyStyle + "<body>" + document.getElementById("divdiv1").innerHTML + "</body>";
+
+			//这里的”divdiv1“是标签的名称。
+
+			LODOP.PRINT_INIT("模板");//打印主题
+
+			LODOP.SET_PRINT_PAGESIZE(1, 0, 0, "A4"); //A4纸张纵向打印
+
+			// LODOP.SET_PRINT_STYLE("FontSize", 9);//打印字体
+
+			LODOP.ADD_PRINT_HTML("0%", "0%", "100%", "100%", strFormHtml);
+
+			//四个数值分别表示Top,Left,Width,Height
+
+		};
+	</script>
+
+</html>
